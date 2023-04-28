@@ -1,0 +1,70 @@
+/* NOTE debug code*/
+
+body.debug .container,
+    body.debug .container-fluid {
+        outline: 2px double blue;
+        outline-offset: -2px;
+    }
+
+    body.debug .row {
+        outline: 2px dashed red;
+        outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+        outline: 2px dotted forestgreen;
+        outline-offset: -3px;
+    }
+
+
+
+/* NOTE begin custom styling  */
+
+
+/* NOTE variables */
+
+:root {
+    --mainColor: #FF4E00;
+    --accentOne: #BF3100;
+    --accentTwo: #23231A;
+    --accentThree: #E8AA14;
+    --accentFour: #BFBDC1;
+    --textOne: #fff;
+}
+
+
+
+/* NOTE start media query */
+
+/* NOTE med screen breakpoint */
+@media (max-width: 768px) {
+    .md-van {
+        display: none;
+        height: 0;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    .lg-van {
+        display: none;
+        height: 0;
+        overflow: hidden;
+    }
+}
+/* NOTE end media query */
+
+/* NOTE base style rules */
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+header {
+    background-color: var(--mainColor);
+    color: var(--textOne);
+}
+
+.page-intro {
+    color: black;
+}
