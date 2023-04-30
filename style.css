@@ -30,13 +30,21 @@
     --accentThree: #7D8491;
     --accentFour: #3B7080;
 
+    --glassOne: rgba(0, 0, 0, 0.55);
+    --glassTwo: rgba(0, 0, 0, 0.1);
+
     --textOne: #000;
     --textTwo: #fff;
     --textThree: #7D8491;
     --textFour: #CC2132;
 
-    --borderOne: #CC2132;
-    --borderTwo: #000;
+    --borderOne: var(--accentOne);
+    --borderTwo: var(--accentTwo);
+
+    --aboutOverhang: 6rem;
+    --borderBottom: 0.5rem;
+    --navHeight: 7rem;
+    --scrollPad: 2rem;
 }
 
 /* NOTE Google Material Symbols Styles*/
@@ -53,7 +61,12 @@
 /* NOTE start media query */
 
 /* NOTE med screen breakpoint */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
+
+:root {
+    --aboutOverhang: 0 !important;
+}
+
     .md-van {
         display: none;
         height: 0;
@@ -61,15 +74,31 @@
     }
 
     header {
-        padding: 0.1rem 0 !important;
+        padding: 0;
+    }
+
+    nav {
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
     }
 
     nav:hover {
-        height: 40vh;
+        max-height: 75vh;
+        height: calc((var(--navHeight) * 2.5) + var(--borderBottom));
+    }
+
+    .anchor-container {
+        padding: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start !important;
     }
 
     .nav-logo {
-        height: 100%;
+        height: 7rem;
+        max-height: 25vh;
         display: flex;
         align-items: center;
         justify-content: center !important;
@@ -77,6 +106,19 @@
 
     .nav-collapse {
         padding: 0;
+        margin: 0;
+        height: 100%;
+        align-content: flex-start;
+        justify-content:flex-start !important;
+        overflow: hidden;
+    }
+
+    .nav-collapse a{
+        height: calc(var(--navHeight) / 3) !important;
+    }
+
+    .page-intro {
+        padding-right: 2rem !important;
     }
 }
 
@@ -89,7 +131,9 @@
 }
 /* NOTE end media query */
 
-/* NOTE base style rules */
+
+
+/* NOTE base style start */
 
 body {
     font-family: 'Work Sans', sans-serif;
@@ -100,14 +144,34 @@ header {
     color: var(--textOne);
 }
 
+
+.anchor{
+    position:absolute;
+    z-index: 100;
+    height: 0;
+    width: 0;
+    display: hidden;
+    padding-top: calc(var(--navHeight) + var(--scrollPad)) !important;
+    margin-top: calc((var(--navHeight) * -1) - var(--scrollPad)) !important;
+}
+
+
+.overhang-comp {
+    margin-top: var(--aboutOverhang);
+}
+
+/* NOTE base style end */
+
+
+
 /* NOTE navigation start */
 
 nav {
+    max-height: 25vh;
     color: var(--textOne);
     background-color: var(--mainColor);
-    height: 10vh;
-    min-height: 4rem;
-    border-width: 0 0 0.6rem 0;
+    height: var(--navHeight);
+    border-width: 0 0 var(--borderBottom) 0;
     border-color: var(--borderOne);
     border-style: solid;
     overflow: hidden;
@@ -115,17 +179,15 @@ nav {
 }
 
 .nav-logo {
-    height: 100%;
-    max-height: 10vh;
+    height: 7rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    padding: 0 1rem;
 }
 
 .nav-logo img {
     height: 80%;
-    max-height: 10vh;
-    min-height: 3rem;
     max-width: 98%;
     display: flex;
 }
@@ -154,9 +216,90 @@ nav {
     color: var(--textTwo);
 }
 
+/* NOTE navigation end */
+
+
+
+/* NOTE slider section start */
 .page-intro {
-    color: black;
+    min-height: 65vh;
+    color: var(--textTwo);
+    background-image: url(assets/images/watch3.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 2rem 0 2rem 2rem;
 }
+
+.image-text {
+    width: 80%;
+    border-style: solid;
+    padding: 0.5rem calc((var(--bs-gutter-x) * .5) + 1rem) 0.5rem 0.5rem;
+    border-width: 0 0 0 0.5rem;
+    border-color: var(--accentOne);
+    background: var(--glassOne);
+    box-shadow: 0 4px 30px var(--glassTwo);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+/* NOTE slider section end */
+
+
+
+/* NOTE section one start */
+.section-one {
+    background-color: var(--accentOne);
+    color: var(--textTwo);
+}
+
+
+.intro-card-container {
+    color: var(--textOne);
+    background-color: var(--mainColor);
+    height: calc(100% + var(--aboutOverhang));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    border: #000 solid;
+    border-radius: 0.1rem;
+}
+
+.intro-card {
+    height: 3rem
+}
+
+.intro-card .icon {
+    height: 100%;
+    width: calc(height);
+    background-color: var(--accentTwo);
+    color: var(--accentOne);
+    padding: 1rem;
+}
+
+.intro-card .description {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.intro-card .description p {
+    margin: 0;
+}
+/* NOTE section one end */
+
+
+
+/* NOTE section two start */
+.section-two {
+    background-color: var(--mainColor);
+}
+/* NOTE section two end */
+
+
+
+/* NOTE testimonials start */
 
 .testimonial-card-star {
     display: flex;
@@ -181,3 +324,5 @@ nav {
 .testimonial-card-star>div>span {
     font-size: 3.2rem;
 }
+
+/* NOTE testimonials end */

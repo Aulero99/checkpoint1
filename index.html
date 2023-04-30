@@ -24,16 +24,16 @@
 
 <body class="debug">
 <!-- NOTE header start -->
-    <header class="container-fluid sticky-top">
+    <header class="sticky-top container-fluid">
 
 <!-- NOTE nav bar start -->
-        <nav for="nav-bar" class="row">
+        <nav for="nav-bar" class="row d-flex flex-row flex-md-column">
             
                 <a class="nav-logo col-12 col-md-5" href="#">
                     <img src="assets/images/logo.svg" alt="Logo">
                 </a>
             
-            <div for="navigation" class="col-12 col-md-7">
+            <div for="navigation" class="col-12 col-md-7 anchor-container h-100">
                 <div class="col-12 nav-collapse d-flex flex-column flex-md-row ">
                     <a href="#home" class="d-flex">Home</a>
                     <a href="#about" class="d-flex">About</a>
@@ -48,13 +48,13 @@
 <!-- NOTE header end -->
 
 <!-- NOTE main start -->
-    <main class="container-fluid"><a name="home"></a>
+    <main class="container-fluid"><a name="home" class="anchor"></a>
 
 <!-- NOTE page intro start -->
-        <section for="intro" class="row page-intro">
+        <section for="slider section-zero" class="row page-intro">
 
 <!-- NOTE head form start -->
-            <div for="form" class="col-12 col-md-4">
+            <div for="form" class="p-3 card col-12 col-md-4">
                 <div for="form-container">
                     <form>
                         <div class="form-group">
@@ -77,8 +77,8 @@
 <!-- NOTE head form end -->
 
 <!-- NOTE Image text start -->
-            <div class="col-12 col-md-8">
-                <div for="image-text" class="md-van"> <!-- class="d-none d-md-flex" also works for this effect instead of an @media style -->
+            <div class="p-0 align-items-end d-flex flex-column justify-content-center col-12 col-md-8">
+                <div for="image-text" class="image-text md-van"> <!-- class="d-none d-md-flex" also works for this effect instead of an @media style -->
                     <h1>Lorem, ipsum dolor.</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime eaque et voluptatem reiciendis laborum perferendis nulla, asperiores sequi iste, beatae ratione repellat incidunt eveniet aliquam.</p>
                 </div>
@@ -89,10 +89,9 @@
 <!-- NOTE page intro end -->
 
 <!-- NOTE about start-->
-        <section for="about" class="row">
-<a name="about"></a>
-            <div class="col-12 col-md-5">
-                <h1>Lorem, ipsum dolor.
+        <section for="about section-one" class="section-one p-3 row"><a name="about" class="anchor"></a>
+            <div for="about-1-sec-1" class="col-12 col-md-5">
+                <h1>About 1
                 </h1>
                 <h4>
                     Lorem ipsum dolor sit amet.
@@ -100,16 +99,54 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aspernatur accusantium quod in sunt necessitatibus qui voluptatum, eius unde libero voluptates suscipit nobis cumque dolor culpa praesentium laudantium impedit repellat! Atque voluptatum, architecto at iure eum reiciendis obcaecati libero! Iure!</p>
             </div>
 
-            <div class="col-12 col-md-7">
-                <div for="intro-card">
-<!-- NOTE code below needs to replicated 4 additional times -->
-                    <div>
-                        <div for="image"></div>
-                        <div for="text">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam asperiores sapiente sunt, aspernatur voluptatibus eligendi natus commodi assumenda saepe velit.</p>
+            <div for="about-1-sec-2" class="col-12 col-md-7">
+
+                <div for="intro-card" class="intro-card-container">
+
+                    <div for="build" class="d-flex flex-row intro-card">
+                        <div for="image" class="icon">
+                            <span class="material-symbols-outlined">build</span>
+                        </div>
+                        <div for="text" class="description">
+                            <p>Lifetime Warranty</p>
                         </div>
                     </div>
-<!-- end replication -->
+
+                    <div for="quality" class="d-flex flex-row intro-card">
+                        <div for="image" class="icon">
+                            <span class="material-symbols-outlined">watch</span>
+                        </div>
+                        <div for="text" class="description">
+                            <p>Industry Leading Quality</p>
+                        </div>
+                    </div>
+
+                    <div for="style" class="d-flex flex-row intro-card">
+                        <div for="image" class="icon">
+                            <span class="material-symbols-outlined">style</span>
+                        </div>
+                        <div for="text" class="description">
+                            <p>Style for Any Occasion</p>
+                        </div>
+                    </div>
+
+                    <div for="sell" class="d-flex flex-row intro-card">
+                        <div for="image" class="icon">
+                            <span class="material-symbols-outlined">sell</span>
+                        </div>
+                        <div for="text" class="description">
+                            <p>Locally Available</p>
+                        </div>
+                    </div>
+
+                    <div for="contact" class="d-flex flex-row intro-card">
+                        <div for="image" class="icon">
+                            <span class="material-symbols-outlined"><span class="material-symbols-outlined">phone_in_talk</span></span>
+                        </div>
+                        <div for="text" class="description">
+                            <p>Get in Touch</p>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -117,13 +154,13 @@
 <!-- NOTE about end-->
 
 <!-- NOTE  about 2 start-->
-        <section for="about-2" class="row">
+        <section for="about-2 section-two" class="section-two p-3 row">
 
-            <div for="image" class="col-12 col-md-4">
-
+            <div for="video" class="col-12 col-md-4">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/v16vUCGqEQ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
 
-            <div for="text" class="col-12 col-md-8">
+            <div for="text" class="overhang-comp col-12 col-md-8">
                 <div class="d-flex flex-row">
                     <div>
                         <span class="material-symbols-outlined" style="font-size: 3rem;">verified_user</span>
@@ -146,7 +183,7 @@
 <!-- NOTE about 2 end-->
 
 <!-- NOTE contact start-->
-        <section for="testimonials" class="row"> <a name="testimonials"></a>
+        <section for="testimonials section-three" class="row"> <a name="testimonials" class="anchor"></a>
             <div class="d-flex flex-wrap flex-column flex-md-row col-12">
 
                 <div for="testimonial-card" class="order-1 order-md-2">
@@ -207,8 +244,7 @@
 <!-- NOTE main end -->
 
 <!-- NOTE footer end -->
-    <footer class="container-fluid">
-<a name="contact"></a>
+    <footer for="footing" class="container-fluid"><a name="contact" class="anchor"></a>
         <section for="socials" class="row">
             <div class="col-12">
                 <h2>Footer</h2>
