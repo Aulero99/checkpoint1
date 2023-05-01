@@ -28,7 +28,7 @@
     --accentOne: #CC2132;
     --accentTwo: #000;
     --accentThree: #7D8491;
-    --accentFour: #ffbdc4;
+    --accentFour: #ff99a3;
 
     --glassOne: rgba(0, 0, 0, 0.55);
     --glassTwo: rgba(0, 0, 0, 0.1);
@@ -41,9 +41,9 @@
     --borderOne: var(--accentOne);
     --borderTwo: var(--accentTwo);
 
-    --aboutOverhang: 6rem;
+    --aboutOverhang: 5rem;
     --borderBottom: 0.5rem;
-    --navHeight: 7rem;
+    --navHeight: 5.5rem;
     --scrollPad: 1.85rem;
     --trasition: 120ms;
 }
@@ -98,7 +98,7 @@
     }
 
     .nav-logo {
-        height: 7rem;
+        height: var(--navHeight);
         max-height: 25vh;
         display: flex;
         align-items: center;
@@ -243,7 +243,7 @@ nav {
 }
 
 .nav-logo {
-    height: 7rem;
+    height: var(--navHeight);
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -251,8 +251,8 @@ nav {
 }
 
 .nav-logo img {
-    height: 80%;
-    max-width: 98%;
+    height: 70%;
+    max-width: 90%;
     display: flex;
 }
 
@@ -490,6 +490,19 @@ nav {
     color: var(--textOne);
 }
 
+.testimonial-card-spacer .current .star>div{
+    background-color: var(--accentOne) !important;
+}
+
+.testimonial-card-spacer .current .links a{
+    color: var(--accentOne) !important;
+}
+
+.testimonial-card-spacer .current .quotes {
+    color: var(--textOne) !important;
+}
+
+
 /* NOTE testimonials end */
 
 
@@ -510,8 +523,10 @@ nav {
 
 /* NOTE button styles start*/
 .btn-cus-1 {
-    background-color: var(--accentFour);
-    color: var(--accentOne);
+    background-color: var(--mainColor);
+    border: var(--accentOne) solid 0.1rem;
+    color: var(--textFour);
+    font-weight: bold;
 }
 
 .btn-cus-1:hover {
@@ -527,33 +542,18 @@ nav {
 .btn-cus-2 {
     background-color: var(--accentOne);
     color: var(--textTwo);
+    border: 0 !important;
 }
 
 .btn-cus-2:hover {
-    background-color: var(--accentTwo);
-    color: var(--textTwo);
+    background-color: var(--accentTwo) !important;
+    color: var(--textTwo) !important;
 }
 
 .btn-cus-2:active {
-    background-color: var(--accentTwo) !important;
-    color: var(--accentOne) !important;
-}
-
-.btn-cus-border {
-    background-color: var(--mainColor);
-    color: var(--textOne);
-    border: var(--accentOne);
-    border-style: solid;
-    border-width: 0.05rem;
-}
-
-.btn-cus-border:hover {
-    background-color: var(--accentFour);
-}
-
-.btn-cus-border:active {
-    background-color: var(--accentTwo) !important;
-    color: var(--accentOne) !important;
+    background-color: var(--accentThree) !important;
+    border: 0 !important;
+    color: var(--textTwo) !important;
 }
 /* NOTE button styles end */
 
