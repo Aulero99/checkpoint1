@@ -28,7 +28,7 @@
     --accentOne: #CC2132;
     --accentTwo: #000;
     --accentThree: #7D8491;
-    --accentFour: #3B7080;
+    --accentFour: #ffbdc4;
 
     --glassOne: rgba(0, 0, 0, 0.55);
     --glassTwo: rgba(0, 0, 0, 0.1);
@@ -44,7 +44,8 @@
     --aboutOverhang: 6rem;
     --borderBottom: 0.5rem;
     --navHeight: 7rem;
-    --scrollPad: 2rem;
+    --scrollPad: 1.85rem;
+    --trasition: 120ms;
 }
 
 /* NOTE Google Material Symbols Styles*/
@@ -58,7 +59,7 @@
   }
 
 
-/* NOTE start media query */
+/* NOTE media query start*/
 
 /* NOTE med screen breakpoint */
 @media (max-width: 769px) {
@@ -120,6 +121,16 @@
     .page-intro {
         padding-right: 2rem !important;
     }
+
+    .intro-card {
+        padding: 2.2rem 0 !important;
+    }
+
+    .testimonial-card-spacer {
+        width: 100% !important;
+        min-width: none !important;
+        margin: 1rem 0;
+    }
 }
 
 @media (max-width: 992px) {
@@ -129,21 +140,57 @@
         overflow: hidden;
     }
 }
-/* NOTE end media query */
+/* NOTE media query end */
 
 
 
 /* NOTE base style start */
-
-body {
-    font-family: 'Work Sans', sans-serif;
-}
+body{font-family: 'Work Sans', 'arial', sans-serif;}
 
 header {
     background-color: var(--mainColor);
     color: var(--textOne);
 }
 
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 0.4rem 0;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.3rem 0;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.2rem 0;
+}
+
+h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding: 0.15rem 0;
+}
+
+p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+p .light {font-weight: 200;}
+
+p .bold {font-weight: 600;}
+
+p .bolder {font-weight: 800;}
 
 .anchor{
     position:absolute;
@@ -164,6 +211,23 @@ header {
 
 
 
+/* NOTE utility styles start */
+.oswald-sans {font-family: 'Oswald', sans-serif !important;}
+
+.work-sans {font-family: 'Work Sans', sans-serif !important;}
+
+.text-one {color: var(--textOne);}
+
+.text-two {color: var(--textTwo);}
+
+.text-three {color: var(--textThree);}
+
+.text-four {color: var(--textFour);}
+
+.text-shadow {text-shadow: 0rem 0rem 0.2rem black;}
+/* NOTE utility styles end */
+
+
 /* NOTE navigation start */
 
 nav {
@@ -175,7 +239,7 @@ nav {
     border-color: var(--borderOne);
     border-style: solid;
     overflow: hidden;
-    transition: 180ms;
+    transition: var(--trasition);
 }
 
 .nav-logo {
@@ -208,7 +272,7 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
-    transition: 40ms;
+    transition: var(--trasition);
 }
 
 .nav-collapse a:hover {
@@ -226,6 +290,7 @@ nav {
     color: var(--textTwo);
     background-image: url(assets/images/watch3.jpg);
     background-attachment: fixed;
+    background-position: center;
     background-size: cover;
     padding: 2rem 0 2rem 2rem;
 }
@@ -249,6 +314,8 @@ nav {
 .section-one {
     background-color: var(--accentOne);
     color: var(--textTwo);
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
 }
 
 
@@ -256,24 +323,32 @@ nav {
     color: var(--textOne);
     background-color: var(--mainColor);
     height: calc(100% + var(--aboutOverhang));
+    padding: 1rem 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
-    border: #000 solid;
-    border-radius: 0.1rem;
+    box-shadow: 0 4px 8px 0 var(--glassOne), 0 4px 30px var(--glassTwo);
 }
 
 .intro-card {
-    height: 3rem
+    height: 3rem;
+    padding: 0.8rem 0;
+    width: 100%;
 }
 
 .intro-card .icon {
     height: 100%;
     width: calc(height);
-    background-color: var(--accentTwo);
+    padding: 0 1rem;
     color: var(--accentOne);
-    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-card .icon span {
+    font-size: 2rem;
 }
 
 .intro-card .description {
@@ -294,35 +369,242 @@ nav {
 /* NOTE section two start */
 .section-two {
     background-color: var(--mainColor);
+    padding: 0 0 2.5rem 0;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
 }
+
+.section-two .icon span{
+    color: var(--textOne);
+    font-size: 4rem;
+}
+
+.section-two .cus-des .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 4rem;
+    width: 100%;
+}
+
+.section-two .cus-des .button-container button {
+    width: 10rem !important;
+}
+
 /* NOTE section two end */
 
 
 
 /* NOTE testimonials start */
 
-.testimonial-card-star {
+.section-three {
+    background-color: var(--accentThree);
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.testimonial-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.testimonial-card-spacer {
+    width: 25vw;
+    min-width: 15rem;
+}
+
+.testimonial-card {
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 var(--glassOne);
+}
+
+.testimonial-card .star {
     display: flex;
     flex-direction: row;
     justify-content:space-around;
-
+    padding: 0 0 1.5rem 0;
 }
 
-.testimonial-card-star>div {
+.testimonial-card .star>div {
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 1rem;
-    width: 4rem;
-    height: 4rem;
-    padding: 0.77rem 1rem 1rem 1rem;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.70rem 1rem 1rem 1rem;
+    background-color: var(--accentFour);
+    color: var(--textTwo);
+    transition: var(--trasition);
+}
+
+.testimonial-card .star>div>span {
+    font-size: 3.2rem;
+}
+
+.testimonial-card .quotes{
+    color: var(--textThree);
+    font-size: medium;
+    font-weight: 600;
+    transition: var(--trasition);
+}
+
+.testimonial-card .quotes h4::before {
+    font-family: 'Secular One', sans-serif;
+    content:'“ ';
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.testimonial-card .links {
+    padding: 1rem 0 0 0;
+}
+
+.testimonial-card .links a{
+    color: var(--accentFour);
+    transition: var(--trasition);
+    height: 100%;
+    padding: 0.3rem;
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+.testimonial-card .links a:hover {
+    color: var(--textOne) !important;
+    background-color: #ffbdc4;
+    cursor: pointer;
+}
+
+.testimonial-card:hover .star>div{
+    background-color: var(--accentOne);
+}
+
+.testimonial-card:hover .links a{
+    color: var(--accentOne);
+}
+
+.testimonial-card:hover .quotes {
+    color: var(--textOne);
+}
+
+/* NOTE testimonials end */
+
+
+
+/* NOTE footer start */
+.foot-one {
     background-color: var(--accentOne);
     color: var(--textTwo);
 }
 
-.testimonial-card-star>div>span {
-    font-size: 3.2rem;
+.foot-two {
+    background-color: var(--accentTwo);
+    color: var(--textTwo);
+    text-align: center;
+}
+/* NOTE footer end */
+
+
+/* NOTE button styles start*/
+.btn-cus-1 {
+    background-color: var(--accentFour);
+    color: var(--accentOne);
 }
 
-/* NOTE testimonials end */
+.btn-cus-1:hover {
+    background-color: var(--accentOne);
+    color: var(--textTwo);
+}
+
+.btn-cus-1:active {
+    background-color: var(--accentTwo) !important;
+}
+
+
+.btn-cus-2 {
+    background-color: var(--accentOne);
+    color: var(--textTwo);
+}
+
+.btn-cus-2:hover {
+    background-color: var(--accentTwo);
+    color: var(--textTwo);
+}
+
+.btn-cus-2:active {
+    background-color: var(--accentTwo) !important;
+    color: var(--accentOne) !important;
+}
+
+.btn-cus-border {
+    background-color: var(--mainColor);
+    color: var(--textOne);
+    border: var(--accentOne);
+    border-style: solid;
+    border-width: 0.05rem;
+}
+
+.btn-cus-border:hover {
+    background-color: var(--accentFour);
+}
+
+.btn-cus-border:active {
+    background-color: var(--accentTwo) !important;
+    color: var(--accentOne) !important;
+}
+/* NOTE button styles end */
+
+
+
+/* NOTE form start */
+.form-container {
+    background-color: var(--mainColor);
+    border: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+.form-one-cus form .cus-input .phone {
+    width: 95%;
+}
+
+.form-one-cus form .cus-input .check {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.form-one-cus form .check input{
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 1rem;
+}
+
+.form-one-cus form .cus-input textarea {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.form-one-cus form .cus-input input {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.form-one-cus form .check input {
+    width: 1rem;
+}
+
+.form-one-cus form .check label {
+    color: var(--textOne);
+    padding-left: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.5rem;
+    margin-bottom: 1rem;
+}
+/* NOTE form end */
