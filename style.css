@@ -46,6 +46,7 @@
     --navHeight: 5.5rem;
     --scrollPad: 1.85rem;
     --trasition: 120ms;
+    --borderRad: 0.15rem;
 }
 
 /* NOTE Google Material Symbols Styles*/
@@ -62,7 +63,7 @@
 /* NOTE media query start*/
 
 /* NOTE med screen breakpoint */
-@media (max-width: 769px) {
+@media (max-width: 768px) {
 
 :root {
     --aboutOverhang: 0 !important;
@@ -331,6 +332,8 @@ nav {
     align-items: flex-start;
     justify-content: space-around;
     box-shadow: 0 4px 8px 0 var(--glassOne);
+    border: 0;
+    border-radius: var(--borderRad);
 }
 
 .intro-card {
@@ -568,9 +571,10 @@ nav {
 /* NOTE form start */
 .form-container {
     background-color: var(--mainColor);
-    border: 0;
     width: 100%;
     padding: 1rem 2rem;
+    border: 0;
+    border-radius: var(--borderRad);
 }
 
 .form-one-cus form .cus-input .phone {
