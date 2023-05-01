@@ -240,6 +240,7 @@ nav {
     border-style: solid;
     overflow: hidden;
     transition: var(--trasition);
+    box-shadow: 0 4px 8px 0 var(--glassOne);
 }
 
 .nav-logo {
@@ -288,6 +289,7 @@ nav {
 .page-intro {
     min-height: 65vh;
     color: var(--textTwo);
+    background-color: var(--accentThree);
     background-image: url(assets/images/watch3.jpg);
     background-attachment: fixed;
     background-position: center;
@@ -328,7 +330,7 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
-    box-shadow: 0 4px 8px 0 var(--glassOne), 0 4px 30px var(--glassTwo);
+    box-shadow: 0 4px 8px 0 var(--glassOne);
 }
 
 .intro-card {
@@ -399,6 +401,10 @@ nav {
 
 .section-three {
     background-color: var(--accentThree);
+    background-image: url(assets/images/watch1.jpg);
+    background-position: center ;
+    background-attachment: fixed;
+    background-size: cover;
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
 }
